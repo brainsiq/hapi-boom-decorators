@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "xo index.js tests/** && mocha tests",
-    "watch": "chokidar index.js tests/** -c 'npm test'"
+    "watch": "chokidar index.js tests/** -c 'npm test'",
+    "ci": "npm test && retire"
   },
   "xo": {
     "envs": [
@@ -22,7 +23,12 @@
     "name": "Chris Impey",
     "email": "chris@impey.io"
   },
-  "keywords": ["hapi", "boom", "decorate", "decorator"],
+  "keywords": [
+    "hapi",
+    "boom",
+    "decorate",
+    "decorator"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/brainsiq/hapi-boom-decorators/issues"
@@ -36,6 +42,7 @@
     "chai": "^3.4.1",
     "chokidar-cli": "^1.2.0",
     "mocha": "^2.3.4",
+    "retire": "^1.1.1",
     "xo": "^0.11.2"
   }
 }
