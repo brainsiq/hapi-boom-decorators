@@ -6,7 +6,7 @@
   "scripts": {
     "test": "xo index.js tests/** && mocha tests",
     "watch": "chokidar index.js tests/** -c 'npm test'",
-    "ci": "npm test && retire"
+    "retire": "retire"
   },
   "xo": {
     "envs": [
