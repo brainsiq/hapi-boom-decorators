@@ -35,8 +35,10 @@
   },
   "homepage": "https://github.com/brainsiq/hapi-boom-decorators#readme",
   "peerDependencies": {
-    "boom": "^3.0.0",
     "hapi": "^11.1.2"
+  },
+  "dependencies": {
+    "boom": "^3.0.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
