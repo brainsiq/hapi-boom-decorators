@@ -1,0 +1,41 @@
+{
+  "name": "hapi-boom-decorators",
+  "version": "0.0.1",
+  "description": "Decorates a Hapi server's reply interface with functions to make it easy to reply with Boom errors",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo index.js tests/** && mocha tests",
+    "watch": "chokidar index.js tests/** -c 'npm test'"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "space": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brainsiq/hapi-boom-decorators.git"
+  },
+  "author": {
+    "name": "Chris Impey",
+    "email": "chris@impey.io"
+  },
+  "keywords": ["hapi", "boom", "decorate", "decorator"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brainsiq/hapi-boom-decorators/issues"
+  },
+  "homepage": "https://github.com/brainsiq/hapi-boom-decorators#readme",
+  "peerDependencies": {
+    "boom": "^3.0.0",
+    "hapi": "^11.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chokidar-cli": "^1.2.0",
+    "mocha": "^2.3.4",
+    "xo": "^0.11.2"
+  }
+}
