@@ -27,7 +27,8 @@ const boomFunctions = [
   'notImplemented',
   'badGateway',
   'serverTimeout',
-  'gatewayTimeout'
+  'gatewayTimeout',
+  'illegal'
 ];
 
 module.exports.register = (server, options, next) => {
