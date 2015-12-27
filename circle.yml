@@ -6,3 +6,5 @@ test:
     - nvm install 4.2 && npm rebuild && npm test
     - nvm install 5.0 && npm rebuild && npm test
     - nvm install 5.1 && npm rebuild && npm test
+    - nvm install 5.2 && npm rebuild && npm test
+    - nvm install 5.3 && npm rebuild && npm test
