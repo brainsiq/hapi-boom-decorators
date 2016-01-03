@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/brainsiq/hapi-boom-decorators#readme",
   "peerDependencies": {
-    "hapi": ">8.x.x"
+    "hapi": ">8"
   },
   "dependencies": {
     "boom": "^3.1.1"
@@ -43,7 +43,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chokidar-cli": "^1.2.0",
-    "hapi": "https://registry.npmjs.org/hapi/-/hapi-11.1.2.tgz",
+    "hapi": "^11.1.4",
     "mocha": "^2.3.4",
     "retire": "^1.1.2",
     "xo": "^0.12.0"
