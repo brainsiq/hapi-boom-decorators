@@ -1,7 +1,11 @@
+machine:
+  node:
+    version: 4.0
+
 test:
   override:
     - npm run retire
-    - nvm install 4.0 && npm rebuild && npm test
+    - npm test
     - nvm install 4.1 && npm rebuild && npm test
     - nvm install 4.2 && npm rebuild && npm test
     - nvm install 5.0 && npm rebuild && npm test
