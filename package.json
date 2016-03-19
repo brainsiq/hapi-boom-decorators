@@ -41,14 +41,14 @@
     "hapi": ">=8"
   },
   "dependencies": {
-    "boom": "^3.1.1"
+    "boom": "^3.1.2"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "chokidar-cli": "^1.2.0",
-    "hapi": "^13.0.0",
-    "mocha": "^2.3.4",
-    "retire": "^1.1.2",
-    "xo": "^0.12.0"
+    "hapi": "^13.2.1",
+    "mocha": "^2.4.5",
+    "retire": "^1.1.4",
+    "xo": "^0.13.0"
   }
 }
