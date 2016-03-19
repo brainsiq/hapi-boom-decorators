@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.3] - 2016-03-19
+- Test against hapi version 13
+- Update out of date dependencies
+- Test against additional node 4.x and 5.x versions
+
 ## [1.1.2] - 2016-01-10
 - Test against hapi version 12
 - Test against additional node version 5.4
