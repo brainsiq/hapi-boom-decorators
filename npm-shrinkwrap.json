@@ -3,13 +3,13 @@
   "version": "1.1.2",
   "dependencies": {
     "boom": {
-      "version": "3.1.1",
-      "from": "boom@>=3.1.1 <4.0.0",
-      "resolved": "https://registry.npmjs.org/boom/-/boom-3.1.1.tgz",
+      "version": "3.1.2",
+      "from": "boom@>=3.1.2 <4.0.0",
+      "resolved": "https://registry.npmjs.org/boom/-/boom-3.1.2.tgz",
       "dependencies": {
         "hoek": {
           "version": "3.0.4",
-          "from": "https://registry.npmjs.org/hoek/-/hoek-3.0.4.tgz",
+          "from": "hoek@3.0.4",
           "resolved": "https://registry.npmjs.org/hoek/-/hoek-3.0.4.tgz"
         }
       }
