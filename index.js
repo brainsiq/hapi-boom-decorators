@@ -26,7 +26,7 @@ const boomFunctions = [
   'badImplementation',
   'notImplemented',
   'badGateway',
-  'serverTimeout',
+  'serverUnavailable',
   'gatewayTimeout',
   'illegal'
 ];

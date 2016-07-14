@@ -3,16 +3,14 @@
   "version": "1.1.4",
   "dependencies": {
     "boom": {
-      "version": "3.1.2",
-      "from": "boom@>=3.1.2 <4.0.0",
-      "resolved": "https://registry.npmjs.org/boom/-/boom-3.1.2.tgz",
-      "dependencies": {
-        "hoek": {
-          "version": "3.0.4",
-          "from": "hoek@3.0.4",
-          "resolved": "https://registry.npmjs.org/hoek/-/hoek-3.0.4.tgz"
-        }
-      }
+      "version": "3.2.2",
+      "from": "boom@latest",
+      "resolved": "https://registry.npmjs.org/boom/-/boom-3.2.2.tgz"
+    },
+    "hoek": {
+      "version": "4.0.1",
+      "from": "hoek@>=4.0.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/hoek/-/hoek-4.0.1.tgz"
     }
   }
 }

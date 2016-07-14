@@ -55,7 +55,7 @@ const decoratedFunctions = [
   'badImplementation',
   'notImplemented',
   'badGateway',
-  'serverTimeout',
+  'serverUnavailable',
   'gatewayTimeout',
   'illegal'
 ];
