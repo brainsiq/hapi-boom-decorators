@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.0] - 2016-07-14
+- Update Boom dependency
+- Replace severTimeout function with severUnavailable
+
 ## [1.1.4] - 2016-07-14
 - Update out of date dependencies (exc. Boom)
 - Test only in latest few versions of node 4.x, 5.x and 6.x
