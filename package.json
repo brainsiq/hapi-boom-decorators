@@ -46,9 +46,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chokidar-cli": "^1.2.0",
-    "hapi": "^13.2.1",
-    "mocha": "^2.4.5",
-    "retire": "^1.1.4",
+    "hapi": "^14.2.0",
+    "mocha": "^3.0.2",
+    "retire": "^1.1.5",
     "xo": "^0.16.0"
   }
 }
