@@ -4,8 +4,7 @@
 
 [![Circle CI](https://circleci.com/gh/brainsiq/hapi-boom-decorators/tree/master.svg?style=svg&circle-token=9fe584ee6c1099bec9ba2864d3a63428f444a098)](https://circleci.com/gh/brainsiq/hapi-boom-decorators/tree/master)
 
-
-A plugin for [hapi.js](hapijs.com) to make responding with [boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the reply interface with equivilent methods.
+A plugin for [hapi.js](hapijs.com) to make responding with [boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the reply interface with equivilent methods. This module is tested against the latest versions of Node.js 4, 5 and 6.
 
 
 ## Install
