@@ -1,35 +1,36 @@
-'use strict';
+/* global describe, it */
+'use strict'
 
-const expect = require('chai').expect;
-const Boom = require('boom');
-const Hapi = require('hapi');
-const plugin = require('../');
+const expect = require('chai').expect
+const Boom = require('boom')
+const Hapi = require('hapi')
+const plugin = require('../')
 
 const runInHapiServer = (doReply, onPostHandler) => {
-  const server = new Hapi.Server();
-  server.connection({});
+  const server = new Hapi.Server()
+  server.connection({})
 
   server.route({
     method: 'GET',
     path: '/test',
     handler: (request, reply) => {
-      doReply(reply);
+      doReply(reply)
     }
-  });
+  })
 
-  server.ext('onPostHandler', onPostHandler);
+  server.ext('onPostHandler', onPostHandler)
 
   server.register({register: plugin}, err => {
     if (err) {
-      return console.error('Failed to register plugin.', err);
+      return console.error('Failed to register plugin.', err)
     }
 
-    server.inject({url: '/test', method: 'GET'});
-  });
-};
+    server.inject({url: '/test', method: 'GET'})
+  })
+}
 
-const testErrorMessage = 'test message';
-const testErrorData = {test: 'data'};
+const testErrorMessage = 'test message'
+const testErrorData = {test: 'data'}
 
 const decoratedFunctions = [
   'badRequest',
@@ -58,33 +59,33 @@ const decoratedFunctions = [
   'serverUnavailable',
   'gatewayTimeout',
   'illegal'
-];
+]
 
 describe('hapi-boom-decorators', () => {
   const assert = (request, boomFunction, done) => {
-    expect(request.response).to.be.deep.equal(Boom[boomFunction](testErrorMessage, testErrorData));
-    done();
-  };
+    expect(request.response).to.be.deep.equal(Boom[boomFunction](testErrorMessage, testErrorData))
+    done()
+  }
 
   decoratedFunctions.forEach(boomFunction => {
     it(`decorates reply with ${boomFunction}`, done => {
-      runInHapiServer(reply => reply[boomFunction](testErrorMessage, testErrorData), request => assert(request, boomFunction, done));
-    });
-  });
+      runInHapiServer(reply => reply[boomFunction](testErrorMessage, testErrorData), request => assert(request, boomFunction, done))
+    })
+  })
 
   it('decorates reply with new boom error', done => {
     runInHapiServer(reply => reply.boom(400, 'Bad request', {data: 'my data'}), request => {
-      expect(request.response).to.be.deep.equal(Boom.create(400, 'Bad request', {data: 'my data'}));
-      done();
-    });
-  });
+      expect(request.response).to.be.deep.equal(Boom.create(400, 'Bad request', {data: 'my data'}))
+      done()
+    })
+  })
 
   it('decorates reply with wrapped boom error', done => {
-    const error = new Error('test error');
+    const error = new Error('test error')
 
     runInHapiServer(reply => reply.boom(500, error, 'an error'), request => {
-      expect(request.response).to.be.deep.equal(Boom.wrap(error, 500, 'an error'));
-      done();
-    });
-  });
-});
+      expect(request.response).to.be.deep.equal(Boom.wrap(error, 500, 'an error'))
+      done()
+    })
+  })
+})
