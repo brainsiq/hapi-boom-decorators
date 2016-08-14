@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.1] - 2016-08-14
+- Test against latest hapi version 14
+- Update dev dependencies (inc changing XO -> JS Standard)
+
 ## [2.0.0] - 2016-07-14
 - Update Boom dependency
 - Replace severTimeout function with severUnavailable
