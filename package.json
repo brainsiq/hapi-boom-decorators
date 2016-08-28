@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/brainsiq/hapi-boom-decorators#readme",
   "peerDependencies": {
-    "hapi": ">=8"
+    "hapi": ">=15.0.2"
   },
   "dependencies": {
     "boom": "^3.2.2"
