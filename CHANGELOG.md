@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.2] - 2016-09-01
+- Test against latest hapi version 15
+- Update dependencies
+- Test against latest versions of node 5 and 6
+
 ## [2.0.1] - 2016-08-14
 - Test against latest hapi version 14
 - Update dev dependencies (inc changing XO -> JS Standard)
