@@ -1,6 +1,6 @@
 {
   "name": "hapi-boom-decorators",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "dependencies": {
     "accept": {
       "version": "2.1.2",
