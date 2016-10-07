@@ -42,7 +42,7 @@
     "hapi": ">=8"
   },
   "dependencies": {
-    "boom": "^4.0.0"
+    "boom": "^4.1.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
