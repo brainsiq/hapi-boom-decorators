@@ -54,6 +54,7 @@ const decoratedFunctions = [
   'preconditionRequired',
   'tooManyRequests',
   'badImplementation',
+  'internal',
   'notImplemented',
   'badGateway',
   'serverUnavailable',

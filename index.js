@@ -24,6 +24,7 @@ const boomFunctions = [
   'preconditionRequired',
   'tooManyRequests',
   'badImplementation',
+  'internal',
   'notImplemented',
   'badGateway',
   'serverUnavailable',
