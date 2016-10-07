@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 4.4
+    version: 4.6
 
 test:
   override:
@@ -8,5 +8,5 @@ test:
     - npm test
     - nvm install 5.11 && npm rebuild && npm test
     - nvm install 5.12 && npm rebuild && npm test
-    - nvm install 6.4 && npm rebuild && npm test
-    - nvm install 6.5 && npm rebuild && npm test
+    - nvm install 6.6 && npm rebuild && npm test
+    - nvm install 6.7 && npm rebuild && npm test
