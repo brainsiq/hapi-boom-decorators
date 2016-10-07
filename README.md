@@ -16,9 +16,9 @@ A plugin for [hapi.js](hapijs.com) to make responding with [boom](https://github
 ```
 server.register({
   register: require('hapi-boom-decorators')
-}, function(err) {
+}, err => {
   ...
-});
+})
 ```
 
 ## API
@@ -30,9 +30,9 @@ server.route({
   method: 'GET',
   path: '/resource/{id}',
   handler: (request, reply) => {
-    reply(Boom.notFound());
+    reply(Boom.notFound())
   }
-});
+})
 ```
 
 New way:
@@ -42,9 +42,9 @@ server.route({
   method: 'GET',
   path: '/resource/{id}',
   handler: (request, reply) => {
-    reply.notFound();
+    reply.notFound()
   }
-});
+})
 ```
 
 Check the [boom documentation](https://github.com/hapijs/boom#overview) for all available methods. Every 4xx and 5xx error type has been implemented in hapi-boom-decorators with the same function signature e.g. `reply.xxx([message], [data])`.
