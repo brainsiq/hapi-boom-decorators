@@ -5,6 +5,7 @@ const Boom = require('boom')
 const boomFunctions = [
   'badRequest',
   'unauthorized',
+  'paymentRequired',
   'forbidden',
   'notFound',
   'methodNotAllowed',

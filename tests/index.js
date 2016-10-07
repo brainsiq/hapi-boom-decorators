@@ -35,6 +35,7 @@ const testErrorData = {test: 'data'}
 const decoratedFunctions = [
   'badRequest',
   'unauthorized',
+  'paymentRequired',
   'forbidden',
   'notFound',
   'methodNotAllowed',
