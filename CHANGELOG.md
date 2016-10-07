@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.2.0] - 2016-10-07
+- Test against latest versions of node 4, 5 and 6
+- Update boom dependency
+- Decorate hapi.js reply interface with new boom functions: internal, paymentRequired
+
 ## [2.0.2] - 2016-09-01
 - Test against latest hapi version 15
 - Update dependencies
