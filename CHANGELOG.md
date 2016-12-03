@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.1] - 2016-12-03
+- Test against latest versions of node 6 and 7
+- Update dependencies
+- Remove retire.js and test with Snyk
+
 ## [2.1.0] - 2016-10-07
 - Test against latest versions of node 4, 5 and 6
 - Update boom dependency
