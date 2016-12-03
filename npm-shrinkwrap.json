@@ -1,6 +1,6 @@
 {
   "name": "hapi-boom-decorators",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "dependencies": {
     "acorn": {
       "version": "4.0.3",
