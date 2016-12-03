@@ -4,7 +4,7 @@
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-A plugin for [hapi.js](hapijs.com) to make responding with [boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the reply interface with equivilent methods. This module is tested against the latest versions of Node.js 6 and 7.
+A plugin for [hapi.js](hapijs.com) to make responding with [boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the reply interface with equivilent functions. This module is tested against the latest versions of Node.js 6 and 7.
 
 
 ## Install
@@ -47,8 +47,7 @@ server.route({
 })
 ```
 
-Check the [boom documentation](https://github.com/hapijs/boom#overview) for all available methods. Every 4xx and 5xx error type has been implemented in hapi-boom-decorators with the same function signature e.g. `reply.xxx([message], [data])`.
-
+Check the [boom documentation](https://github.com/hapijs/boom#overview) for all available functions. Every 4xx and 5xx error type has been implemented, and the parameters to each function in hapi-boom-decorators are the same as the parameters to the boom function. In addition:
 
 * [wrap](https://github.com/hapijs/boom#wraperror-statuscode-message) - `reply(Boom.wrap(err, 500, 'a message'))` can be written as `reply.boom(500, err, 'a message')`
 * [create](https://github.com/hapijs/boom#createstatuscode-message-data) - `reply(Boom.create(500, 'a message', {}))` can be written as `reply.boom(500, 'a message', {})`
