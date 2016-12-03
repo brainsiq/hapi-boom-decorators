@@ -11,13 +11,6 @@
     "test": "standard && mocha tests",
     "watch": "chokidar index.js tests/** -c 'npm test'"
   },
-  "xo": {
-    "envs": [
-      "node",
-      "mocha"
-    ],
-    "space": true
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brainsiq/hapi-boom-decorators.git"
