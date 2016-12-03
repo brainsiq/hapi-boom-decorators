@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.2.0] - 2016-12-03
+- Support creating boom errors with a function signature that is not `Boom.[errorType]([message], [data])`
+
+e.g. `Boom.methodNotAllowed([message], [data], [allow])`
+
 ## [2.1.1] - 2016-12-03
 - Test against latest versions of node 6 and 7
 - Update dependencies
