@@ -90,4 +90,16 @@ describe('hapi-boom-decorators', () => {
       done()
     })
   })
+
+  it('passes all arguments for functions with different signatures', done => {
+    // methodNotAllowed has a different signature to the other Boom errors
+    const message = 'not allowed'
+    const data = {foo: 'bar'}
+    const allow = 'allow header value'
+
+    runInHapiServer(reply => reply.methodNotAllowed(message, data, allow), request => {
+      expect(request.response).to.be.deep.equal(Boom.methodNotAllowed(message, data, allow))
+      done()
+    })
+  })
 })
