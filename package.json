@@ -9,8 +9,7 @@
   "scripts": {
     "lint": "standard",
     "test": "standard && mocha tests",
-    "watch": "chokidar index.js tests/** -c 'npm test'",
-    "retire": "retire"
+    "watch": "chokidar index.js tests/** -c 'npm test'"
   },
   "xo": {
     "envs": [
@@ -49,7 +48,6 @@
     "chokidar-cli": "^1.2.0",
     "hapi": "^16.0.1",
     "mocha": "^3.2.0",
-    "retire": "^1.2.10",
     "standard": "^8.6.0"
   }
 }

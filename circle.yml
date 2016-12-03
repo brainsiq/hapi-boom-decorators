@@ -4,7 +4,6 @@ machine:
 
 test:
   override:
-    - npm run retire
     - npm test
     - nvm install 5.11 && npm rebuild && npm test
     - nvm install 5.12 && npm rebuild && npm test
