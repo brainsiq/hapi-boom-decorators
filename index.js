@@ -36,7 +36,7 @@ const boomFunctions = [
 module.exports.register = (server, options, next) => {
   boomFunctions.forEach(boomFunction => {
     server.decorate('reply', boomFunction, function () {
-      this.response(Boom[boomFunction](...arguments))
+      this.response(Boom[boomFunction].apply(Boom, arguments))
     })
   })
 
