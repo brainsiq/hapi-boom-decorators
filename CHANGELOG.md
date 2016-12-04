@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [2.2.1] - 2016-12-04
-- Remove spread operator usage to fix Node 4 support #39
+- Remove spread operator usage to fix Node 4 support [#39](https://github.com/brainsiq/hapi-boom-decorators/issues/39)
 - Add node 4 back to CI configuration
 
 ## [2.2.0] - 2016-12-03
