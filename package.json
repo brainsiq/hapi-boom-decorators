@@ -41,6 +41,6 @@
     "chokidar-cli": "^1.2.0",
     "hapi": "^16.0.1",
     "mocha": "^3.2.0",
-    "standard": "^8.6.0"
+    "standard": "^10.0.0-beta.0"
   }
 }
