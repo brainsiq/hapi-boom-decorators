@@ -83,10 +83,9 @@ describe('hapi-boom-decorators', () => {
   })
 
   it('decorates reply with wrapped boom error', done => {
-    const error = new Error('test error')
-
-    runInHapiServer(reply => reply.boom(500, error, 'an error'), request => {
-      expect(request.response).to.be.deep.equal(Boom.wrap(error, 500, 'an error'))
+    // Boom.wrap mutates the error and sets isBoom to true. Boom.wrap will throw if error.isBoom is true.
+    runInHapiServer(reply => reply.boom(500, new Error('test error'), 'an error'), request => {
+      expect(request.response).to.be.deep.equal(Boom.wrap(new Error('test error'), 500, 'an error'))
       done()
     })
   })
