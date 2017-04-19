@@ -30,7 +30,8 @@ const boomFunctions = [
   'badGateway',
   'serverUnavailable',
   'gatewayTimeout',
-  'illegal'
+  'illegal',
+  'teapot'
 ]
 
 module.exports.register = (server, options, next) => {

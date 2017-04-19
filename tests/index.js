@@ -60,7 +60,8 @@ const decoratedFunctions = [
   'badGateway',
   'serverUnavailable',
   'gatewayTimeout',
-  'illegal'
+  'illegal',
+  'teapot'
 ]
 
 describe('hapi-boom-decorators', () => {
