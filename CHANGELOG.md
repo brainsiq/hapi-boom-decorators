@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.0] - 2017-05-29
+- Updated boom dependency to version 5.1.0
+
 ## [2.3.0] - 2017-04-19
 - Support for Boom.teapot()
 
