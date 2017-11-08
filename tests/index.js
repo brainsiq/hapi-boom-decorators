@@ -1,31 +1,29 @@
-/* global describe, it */
+/* global describe, it, beforeEach */
 'use strict'
 
-const expect = require('chai').expect
+const chai = require('chai')
 const Boom = require('boom')
 const Hapi = require('hapi')
 const plugin = require('../')
+const expect = chai.expect
 
-const runInHapiServer = (doReply, onPostHandler) => {
-  const server = new Hapi.Server()
-  server.connection({})
+const getHandleOnHapiResponseToolkit = async (doReply, onPostHandler) => {
+  const server = new Hapi.Server({})
 
-  server.route({
-    method: 'GET',
-    path: '/test',
-    handler: (request, reply) => {
-      doReply(reply)
-    }
-  })
+  await server.register(plugin)
 
-  server.ext('onPostHandler', onPostHandler)
+  return new Promise((resolve, reject) => {
+    server.route({
+      method: 'GET',
+      path: '/test',
+      handler: (request, h) => {
+        resolve(h)
 
-  server.register({register: plugin}, err => {
-    if (err) {
-      return console.error('Failed to register plugin.', err)
-    }
+        return 'ok'
+      }
+    })
 
-    server.inject({url: '/test', method: 'GET'})
+    server.inject({ url: '/test', method: 'GET' })
   })
 }
 
@@ -65,41 +63,64 @@ const decoratedFunctions = [
 ]
 
 describe('hapi-boom-decorators', () => {
-  const assert = (request, boomFunction, done) => {
-    expect(request.response).to.be.deep.equal(Boom[boomFunction](testErrorMessage, testErrorData))
-    done()
-  }
+  let toolkit = null
+
+  beforeEach(async () => {
+    toolkit = await getHandleOnHapiResponseToolkit()
+  })
 
   decoratedFunctions.forEach(boomFunction => {
-    it(`decorates reply with ${boomFunction}`, done => {
-      runInHapiServer(reply => reply[boomFunction](testErrorMessage, testErrorData), request => assert(request, boomFunction, done))
+    it(`decorates toolkit with #${boomFunction} throwing a Boom#${boomFunction} error`, () => {
+      const expectedBoomError = Boom[boomFunction](testErrorMessage, testErrorData)
+
+      try {
+        toolkit[boomFunction](testErrorMessage, testErrorData)
+      } catch (err) {
+        expect(err).to.be.deep.equal(expectedBoomError)
+
+        return
+      }
+
+      throw new Error(`Didn't throw a Boom#${boomFunction} error`)
     })
   })
 
-  it('decorates reply with new boom error', done => {
-    runInHapiServer(reply => reply.boom(400, 'Bad request', {data: 'my data'}), request => {
-      expect(request.response).to.be.deep.equal(Boom.create(400, 'Bad request', {data: 'my data'}))
-      done()
-    })
+  it('decorates toolkit with #boomify throwing a Boom#boomify error', () => {
+    const error = new Error('test error')
+    const options = {
+      statusCode: 400,
+      message: testErrorMessage,
+      decorate: testErrorData,
+      override: false
+    }
+    const expectedBoomError = Boom.boomify(error, options)
+
+    try {
+      toolkit.boomify(error, options)
+    } catch (err) {
+      expect(err).to.be.deep.equal(expectedBoomError)
+
+      return
+    }
+
+    throw new Error(`Didn't throw a Boom#boomify error`)
   })
 
-  it('decorates reply with wrapped boom error', done => {
-    // Boom.wrap mutates the error and sets isBoom to true. Boom.wrap will throw if error.isBoom is true.
-    runInHapiServer(reply => reply.boom(500, new Error('test error'), 'an error'), request => {
-      expect(request.response).to.be.deep.equal(Boom.wrap(new Error('test error'), 500, 'an error'))
-      done()
-    })
-  })
-
-  it('passes all arguments for functions with different signatures', done => {
-    // methodNotAllowed has a different signature to the other Boom errors
+  it('passes all arguments for methods with a different Boom signature', () => {
+    // i.e. boomify, methodNotAllowed, unauthorized
     const message = 'not allowed'
-    const data = {foo: 'bar'}
+    const data = { foo: 'bar' }
     const allow = 'allow header value'
+    const expectedBoomError = Boom.methodNotAllowed(message, data, allow)
 
-    runInHapiServer(reply => reply.methodNotAllowed(message, data, allow), request => {
-      expect(request.response).to.be.deep.equal(Boom.methodNotAllowed(message, data, allow))
-      done()
-    })
+    try {
+      toolkit.methodNotAllowed(message, data, allow)
+    } catch (err) {
+      expect(err).to.be.deep.equal(expectedBoomError)
+
+      return
+    }
+
+    throw new Error(`Didn't throw a Boom#methodNotAllowed error`)
   })
 })

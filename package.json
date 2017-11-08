@@ -31,15 +31,15 @@
   },
   "homepage": "https://github.com/brainsiq/hapi-boom-decorators#readme",
   "peerDependencies": {
-    "hapi": ">=8"
+    "hapi": ">=17"
   },
   "dependencies": {
-    "boom": "^5.1.0"
+    "boom": "^6.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chokidar-cli": "^1.2.0",
-    "hapi": "^16.0.1",
+    "hapi": "^17.0.1",
     "mocha": "^4.0.1",
     "standard": "^10.0.0-beta.0"
   }
