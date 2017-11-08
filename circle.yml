@@ -1,9 +1,8 @@
 machine:
   node:
-    version: 6
+    version: 8
 
 test:
   override:
     - npm test
-    - nvm install 7 && npm rebuild && npm test
-    - nvm install 4 && npm rebuild && npm test
+    - nvm install 9 && npm rebuild && npm test
