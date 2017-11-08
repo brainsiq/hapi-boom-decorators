@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "standard && mocha tests",
+    "test": "mocha tests && standard",
     "watch": "chokidar index.js tests/** -c 'npm test'"
   },
   "repository": {
