@@ -4,7 +4,7 @@
 const chai = require('chai')
 const Boom = require('boom')
 const Hapi = require('hapi')
-const plugin = require('../')
+const plugin = require('../../')
 const expect = chai.expect
 
 const getHandleOnHapiResponseToolkit = async (doReply, onPostHandler) => {
@@ -62,7 +62,7 @@ const decoratedFunctions = [
   'teapot'
 ]
 
-describe('hapi-boom-decorators', () => {
+describe('decorators', () => {
   let toolkit = null
 
   beforeEach(async () => {
