@@ -1,5 +1,13 @@
 # hapi-boom-decorators
 
+-----------------
+
+### Notice for Hapi v17 users
+
+This plugin will not be updated to work with Hapi v17. Please read [my comment in issues](https://github.com/brainsiq/hapi-boom-decorators/issues/51#issuecomment-343654910) and feel free to contribute to the discussion if you have other reasons for using this module.
+
+-----------------
+
 [![Known Vulnerabilities](https://snyk.io/test/github/brainsiq/hapi-boom-decorators/badge.svg)](https://snyk.io/test/github/brainsiq/hapi-boom-decorators) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/) [![Circle CI](https://circleci.com/gh/brainsiq/hapi-boom-decorators/tree/master.svg?style=shield&circle-token=9fe584ee6c1099bec9ba2864d3a63428f444a098)](https://circleci.com/gh/brainsiq/hapi-boom-decorators/tree/master)
 
 [![NPM](https://nodei.co/npm/hapi-boom-decorators.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/hapi-boom-decorators/)
