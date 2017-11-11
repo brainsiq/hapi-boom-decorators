@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.1] - 2017-11-11
+- Updated docs with Hapi v17 information
+
 ## [3.0.0] - 2017-05-29
 - Updated boom dependency to version 5.1.0
 
