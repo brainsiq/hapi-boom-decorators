@@ -34,7 +34,7 @@
     "hapi": ">=8"
   },
   "dependencies": {
-    "boom": "^5.1.0"
+    "boom": "^6.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
