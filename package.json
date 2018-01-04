@@ -1,6 +1,6 @@
 {
   "name": "hapi-boom-decorators",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Decorates a Hapi server's reply interface with functions to make it easy to reply with Boom errors",
   "engines": {
     "node": ">=4"
