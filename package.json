@@ -8,7 +8,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "standard && mocha tests",
+    "test": "npm run test:unit && npm run test:integration && standard",
+    "test:unit": "mocha tests/unit",
+    "test:integration": "mocha tests/integration",
     "watch": "chokidar index.js tests/** -c 'npm test'"
   },
   "repository": {
@@ -31,16 +33,16 @@
   },
   "homepage": "https://github.com/brainsiq/hapi-boom-decorators#readme",
   "peerDependencies": {
-    "hapi": ">=8"
+    "hapi": ">=17"
   },
   "dependencies": {
-    "boom": "^5.1.0"
+    "boom": "^7.1.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "chokidar-cli": "^1.2.0",
-    "hapi": "^16.0.1",
-    "mocha": "^4.0.1",
-    "standard": "^10.0.0-beta.0"
+    "hapi": "^17.2.0",
+    "mocha": "^4.1.0",
+    "standard": "^10.0.3"
   }
 }
