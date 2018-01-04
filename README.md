@@ -4,50 +4,50 @@
 
 [![NPM](https://nodei.co/npm/hapi-boom-decorators.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/hapi-boom-decorators/)
 
-A plugin for [hapi.js](hapijs.com) to make responding with [boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the reply interface with equivilent functions. This module is tested against the latest versions of Node.js 4, 6 and 7.
+A plugin for [hapi.js](hapijs.com) to make responding with [Boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the response toolkit with equivilent functions.
 
+This module is tested against Node.js versions 8 and 9. The minimum required version of hapi.js is 17. If you require compatibility with an older version use version 3.0.1 or older.
 
 ## Install
 
 `npm install hapi-boom-decorators --save`
 
-## Register Plugin
+## Add plugin to hapi server
 
 ```
-server.register({
-  register: require('hapi-boom-decorators')
-}, err => {
-  ...
-})
+const hapiBoomDecorators = require('hapi-boom-decorators');
+
+const server = new Hapi.Server();
+
+await server.register(hapiBoomDecorators);
 ```
 
 ## API
 
-Standard way of replying with boom response:
+The normal way of replying with a Boom error response:
+
+```
+const Boom = require('boom');
+
+server.route({
+  method: 'GET',
+  path: '/resource/{id}',
+  handler: (request, h) => {
+    throw Boom.notFound();
+  }
+});
+```
+
+With hapi-boom-decorators:
 
 ```
 server.route({
   method: 'GET',
   path: '/resource/{id}',
-  handler: (request, reply) => {
-    reply(Boom.notFound())
+  handler: (request, h) => {
+    return h.notFound();
   }
 })
 ```
 
-New way:
-
-```
-server.route({
-  method: 'GET',
-  path: '/resource/{id}',
-  handler: (request, reply) => {
-    reply.notFound()
-  }
-})
-```
-
-Check the [boom documentation](https://github.com/hapijs/boom#overview) for all available functions. Every 4xx and 5xx error type has been implemented, and the parameters to each function in hapi-boom-decorators are the same as the parameters to the boom function. In addition:
-
-* [wrap](https://github.com/hapijs/boom#wraperror-statuscode-message) - `reply(Boom.wrap(err, 500, 'a message'))` can be written as `reply.boom(500, err, 'a message')`
-* [create](https://github.com/hapijs/boom#createstatuscode-message-data) - `reply(Boom.create(500, 'a message', {}))` can be written as `reply.boom(500, 'a message', {})`
+Check the [Boom API documentation](https://github.com/hapijs/boom#overview) for all Boom error types. Every 4xx and 5xxx error, as well as `boomify` can be called on the [response toolkit](https://hapijs.com/api#response-toolkit).

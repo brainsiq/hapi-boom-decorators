@@ -10,7 +10,7 @@ const expect = chai.expect
 describe('hapi responses', () => {
   it('responds with 400 Bad Request for #badRequest', async () => {
     const message = 'a bad request message'
-    const server = new Hapi.Server({})
+    const server = new Hapi.Server()
 
     await server.register(plugin)
 
