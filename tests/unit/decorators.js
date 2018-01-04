@@ -76,7 +76,7 @@ describe('decorators', () => {
       try {
         toolkit[boomFunction](testErrorMessage, testErrorData)
       } catch (err) {
-        expect(err).to.be.deep.equal(expectedBoomError)
+        expect(err).to.deep.include(expectedBoomError)
 
         return
       }
@@ -98,7 +98,7 @@ describe('decorators', () => {
     try {
       toolkit.boomify(error, options)
     } catch (err) {
-      expect(err).to.be.deep.equal(expectedBoomError)
+      expect(err).to.deep.include(expectedBoomError)
 
       return
     }
@@ -116,7 +116,7 @@ describe('decorators', () => {
     try {
       toolkit.methodNotAllowed(message, data, allow)
     } catch (err) {
-      expect(err).to.be.deep.equal(expectedBoomError)
+      expect(err).to.deep.include(expectedBoomError)
 
       return
     }
