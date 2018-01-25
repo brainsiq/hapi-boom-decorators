@@ -1,5 +1,7 @@
 # hapi-boom-decorators
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brainsiq/hapi-boom-decorators.svg)](https://greenkeeper.io/)
+
 [![Known Vulnerabilities](https://snyk.io/test/github/brainsiq/hapi-boom-decorators/badge.svg)](https://snyk.io/test/github/brainsiq/hapi-boom-decorators) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
  [![Circle CI](https://circleci.com/gh/brainsiq/hapi-boom-decorators/tree/master.svg?style=shield&circle-token=9fe584ee6c1099bec9ba2864d3a63428f444a098)](https://circleci.com/gh/brainsiq/hapi-boom-decorators/tree/master)
 
