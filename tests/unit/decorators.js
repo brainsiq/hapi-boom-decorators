@@ -59,7 +59,8 @@ const decoratedFunctions = [
   'serverUnavailable',
   'gatewayTimeout',
   'illegal',
-  'teapot'
+  'teapot',
+  'failedDependency'
 ]
 
 describe('decorators', () => {

@@ -32,7 +32,8 @@ const boomFunctions = [
   'gatewayTimeout',
   'illegal',
   'teapot',
-  'boomify'
+  'boomify',
+  'failedDependency'
 ]
 
 const register = async (server, options) => {
