@@ -2,7 +2,15 @@ machine:
   node:
     version: 8
 
+dependencies:
+  pre:
+    - npm install -g greenkeeper-lockfile@1
+
 test:
+  pre:
+    - greenkeeper-lockfile-update
   override:
     - npm test
     - nvm install 9 && npm rebuild && npm test
+  post:
+    - greenkeeper-lockfile-upload
