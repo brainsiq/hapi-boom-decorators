@@ -41,8 +41,8 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chokidar-cli": "^1.2.0",
-    "hapi": "^17.2.0",
-    "mocha": "^4.1.0",
-    "standard": "^10.0.3"
+    "hapi": "^17.4.0",
+    "mocha": "^5.1.1",
+    "standard": "^11.0.1"
   }
 }
