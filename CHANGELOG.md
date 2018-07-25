@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [4.1.1] - 2018-07-25
+### Security
+- Update boom sub-dependencies to remove vulnerable version of `hoek` ([CVE-2018-3728](https://nvd.nist.gov/vuln/detail/CVE-2018-3728))
+
 ## [4.1.0] - 2018-04-07
 ### Added
 - Decorator function for `Boom.failedDependency`
