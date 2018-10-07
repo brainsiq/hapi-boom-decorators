@@ -11,6 +11,6 @@ test:
     - greenkeeper-lockfile-update
   override:
     - npm test
-    - nvm install 9 && npm rebuild && npm test
+    - nvm install 10 && npm rebuild && npm test
   post:
     - greenkeeper-lockfile-upload

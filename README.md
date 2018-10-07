@@ -9,7 +9,7 @@
 
 A plugin for [hapi.js](hapijs.com) to make responding with [Boom](https://github.com/hapijs/boom) errors a little less verbose by decorating the response toolkit with equivilent functions.
 
-This module is tested against Node.js versions 8 and 9. The minimum required version of hapi.js is 17. If you require compatibility with an older version use version 3.0.1 or older.
+This module is tested against Node.js versions 8 and 10. The minimum required version of hapi.js is 17. If you require compatibility with an older version use version 3.0.1 or older.
 
 ## Install
 
