@@ -28,7 +28,7 @@ const getHandleOnHapiResponseToolkit = async (doReply, onPostHandler) => {
 }
 
 const testErrorMessage = 'test message'
-const testErrorData = {test: 'data'}
+const testErrorData = { test: 'data' }
 
 const decoratedFunctions = [
   'badRequest',
