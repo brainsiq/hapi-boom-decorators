@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    shell: /bin/bash --login
+    docker:
+    - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+      command: /sbin/init
+    steps:
+    - checkout
+    - run:
+        working_directory: ~/brainsiq/hapi-boom-decorators
+        command: nvm install 8 && nvm alias default 8
+    - restore_cache:
+        keys:
+        - v1-dep-{{ .Branch }}-
+        # Default branch if above not available
+        - v1-dep-master-
+    - run: npm install -g greenkeeper-lockfile@1
+    - run: npm install
+    - save_cache:
+        key: v1-dep-{{ .Branch }}-{{ epoch }}
+        paths:
+        - ./node_modules
+    - run: greenkeeper-lockfile-update
+    - run: npm test
+    - run: nvm install 10 && npm rebuild && npm test
+    - run: greenkeeper-lockfile-upload
+    - store_test_results:
+        path: /tmp/circleci-test-results
